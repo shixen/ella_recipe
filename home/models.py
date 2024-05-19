@@ -13,13 +13,15 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="recipe_post")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recipe_post")
     content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name="recipe_likes", blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='recipe_like', blank=True)
 
   # presents the recipes in order from latest to last
     class Meta:
@@ -28,9 +30,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def likes(self):
+    def recipe_likes(self):
         return self.likes.count()
-
+        
+        
 # models for creating a comment
 class Comment(models.Model):
     post = models.ForeignKey(
