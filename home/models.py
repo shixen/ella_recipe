@@ -1,5 +1,6 @@
+# imports 
 from django.db import models
-from django.contrib.auth.modles import User
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
@@ -16,10 +17,11 @@ class Post(models.Model):
     content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name="recipe_likes", blank=True)
 
-  # presents wich order the recipes was creaed on
+  # presents the recipes in order from latest to last
     class Meta:
         ordering = ['-created_on']
 
@@ -29,4 +31,20 @@ class Post(models.Model):
     def likes(self):
         return self.likes.count()
 
+# models for creating a comment
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comments_author")
 
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+   # presents comments last comment first
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"
