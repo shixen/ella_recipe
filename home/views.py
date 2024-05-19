@@ -5,5 +5,5 @@ from .models import Post
 
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(staus=1)
-    template_name = 'index.html'
+    queryset = Post.objects.filter(status=1)
+    template_name = 'base.html'
