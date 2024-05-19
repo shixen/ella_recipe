@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f29f)@atx41i)2n^588e3vlmpa3%e^(k4t8u!^&3$&el_pbx0p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-shixen-ellarecipe-qtbj6ge2c2f.ws-eu111.gitpod.io']
+ALLOWED_HOSTS = ['8000-shixen-ellarecipe-qtbj6ge2c2f.ws-eu111.gitpod.io','.herokuapp.com']
 
 
 # Application definition
