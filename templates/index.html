@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                    <div class="card-body">
+                        <a href="{% url 'recipe_details' post.slug %}" class="post-link">
+                            <h1> {{ post.title }} </h1>
+                            <p class="card-text"> {{ post.excerpt }} </p>
+                        </a>
+                    </div>
+                    <p class="card-text text-muted h6">
+                        <i class="far fa-heart"></i>
+                        {{ post.likes }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
