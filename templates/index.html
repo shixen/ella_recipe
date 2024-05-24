@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -15,10 +14,6 @@
                             <p class="card-text"> {{ post.excerpt }} </p>
                         </a>
                     </div>
-                    <p class="card-text text-muted h6">
-                        <i class="far fa-heart"></i>
-                        {{ post.likes }}
-                    </p>
                 </div>
                 {% endfor %}
             </div>
