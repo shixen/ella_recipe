@@ -20,8 +20,6 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(
-        User, related_name='recipe_like', blank=True)
 
   # presents the recipes in order from latest to last
     class Meta:
@@ -30,8 +28,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def recipe_likes(self):
-        return self.likes.count()
         
         
 # models for creating a comment
