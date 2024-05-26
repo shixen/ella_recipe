@@ -1,6 +1,4 @@
 {% load static %}
-{% url 'about' as about_url %}
-
 
 <!doctype html>
 <html lang="en">
@@ -17,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <!-- custom css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
@@ -31,8 +30,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Recipes</a>
-                    <a class="nav-link" href="{% url 'about' %}">About me</a>
+                    <a class="nav-link" href="#">Recipes</a>
+                    <a class="nav-link" href="#">About me</a>
                     <a class="nav-link" href="#">Contact me for ordering</a>
                 </div>
             </div>
