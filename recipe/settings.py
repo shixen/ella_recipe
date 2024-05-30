@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'home',
+    'forms',
 ]
 
 SITE_ID = 1
