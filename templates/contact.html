@@ -2,7 +2,7 @@
 {% block content %}
 
 <!--  contact form for oreding or contacting -->
-<form method="POST" action="{% url 'contact' %}">  
+<form id="contactform" method="POST" action="{% url 'contact' %}">  
     {% csrf_token %}  
   
     <div class="form-group">
@@ -26,7 +26,7 @@
         <textarea class="form-control" id="message" name="message" rows="3"></textarea> 
     </div>
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" onclick="showAlert()">Submit</button>
 </form>
 
 {% endblock %}
