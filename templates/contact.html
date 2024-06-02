@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--  contact form for oreding or contacting -->
 <form method="POST" action="{% url 'contact' %}">  
     {% csrf_token %}  
   
