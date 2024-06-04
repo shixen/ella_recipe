@@ -35,7 +35,7 @@ DEBUG = os.getenv('DEBUG', False)
 
 APPEND_SLASH=False
 
-ALLOWED_HOSTS = ['8000-shixen-ellarecipe-qtbj6ge2c2f.ws-eu114.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-shixen-ellarecipe-6tzd5m7oeks.ws-eu114.gitpod.io','.herokuapp.com']
 
 
 # Application definition
