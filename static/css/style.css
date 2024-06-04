@@ -4,9 +4,7 @@ html, body {
     height: 100%;
 }
 
-
-
-body{
+body {
     background-color: pink;
     margin: 0;
     padding: 0;
@@ -26,8 +24,7 @@ footer {
     justify-content: center;
 }
 
-
-.front-img{
+.front-img {
     background-image: url(../images/Skärmbild\ 2024-05-24\ 122245.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -35,13 +32,13 @@ footer {
     height: 600px;
 }
 
-.card-img{
+.card-img {
     max-height: 400px;
     width: 100%;
     height: auto;
 }
 
-.card-img-top{
+.card-img-top {
     max-height: 400px;
     width: 75%;
     object-fit: cover;
@@ -51,31 +48,29 @@ footer {
     background-color: blue;
 }
 
-.navbar-nav{
-   text-align: center;
-}
-
-.card-text{
+.navbar-nav {
     text-align: center;
 }
 
-.card-title{
+.card-text, .card-title {
     text-align: center;
 }
-.card{
+
+.card {
     border-style: none;
     margin: 10px;
-    align-items: center;
     text-decoration: none;
-    
 }
 
-#post-card{
+#post-card {
     background-color: pink;
 }
 
 a {
     text-decoration: none;
 }
-
 /* comments */
+
+#submitButton{
+    background-color: pink;
+}
