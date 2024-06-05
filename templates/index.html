@@ -19,7 +19,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                     <div class="card-body">
-                        <a href="{% url 'recipe_details' post.slug %}" class="post-link">
+                        <a href="{% url 'recipe_detail' post.slug %}" class="post-link">
                             <h1> {{ post.title }} </h1>
                             <p class="card-text"> {{ post.excerpt }} </p>
                         </a>
