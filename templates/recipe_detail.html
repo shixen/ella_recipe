@@ -2,63 +2,69 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<!-- page when users clicks a spicific recipe -->
+<!-- specific recipe  -->
 <div class="card mb-3" id="post-card">
-  <img src="{{ post.image.url }}" class="card-img-top" alt="..." width="100%">
-  <div class="card-body">
-    <h2 class="card-title"> {{ post.title }}</h2>
-    <p class="card-text"> {{ post.content  | safe }}</p>
-  </div>
-  <!-- comments -->
-  <div class="container">
-    <div class="row">
-        <!-- commentlist -->
-        <div class="col-md-8 card mb-4 mt-3">
-            <h3>Comments:</h3>
-            <div class="card-body">
-                {% for comment in comments %}
-                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
-                    <p class="font-weight-bold">
-                        {{ comment.author }}
-                        <span class="font-weight-normal">{{ comment.created_on }}</span> wrote:
-                    </p>
-                    <div id="comment{{ comment.id }}">
-                        {{ comment.body | linebreaks }}
+    <img src="{{ post.image.url }}" class="card-img-top" alt="..." width="100%">
+    <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+        <p class="card-text">{{ post.content | safe }}</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- comment list  -->
+            <div class="col-md-8">
+                <div class="card mb-4 mt-3">
+                    <h3 class="card-header">Comments:</h3>
+                    <div class="card-body">
+                        {% for comment in comments %}
+                        <div
+                            class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
+                            <p class="font-weight-bold">
+                                {{ comment.author }}
+                                <span class="font-weight-normal">{{ comment.created_on }}</span> wrote:
+                            </p>
+                            <div id="comment{{ comment.id }}">
+                                {{ comment.body | linebreaks }}
+                            </div>
+                            {% if not comment.approved and comment.author == user %}
+                            <p class="approval">This comment is awaiting approval</p>
+                            {% endif %}
+                            {% if user.is_authenticated and comment.author == user %}
+                            <a href="{% url 'comment_edit' post.slug comment.id %}" class="btn btn-edit">Edit</a>
+                            <a href="{% url 'comment_delete' post.slug comment.id %}" class="btn btn-delete">Delete</a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
-                    <p class="approval">This comment is awaiting approval</p>
-                    {% endif %}
-                    {% if user.is_authenticated and comment.author == user %}
-                    <a href="{% url 'comment_edit' post.slug comment.id %}" class="btn btn-edit">Edit</a>
-                    <a href="{% url 'comment_delete' post.slug comment.id %}" class="btn btn-delete">Delete</a>
-                    {% endif %}
                 </div>
-                {% endfor %}
-        </div>
-        <!-- Comment form-->
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    comment is awaiting approval
+            </div>
+
+            <!-- commentform -->
+            <div class="col-md-4">
+                <div class="card mb-4 mt-3">
+                    <div class="card-body">
+                        {% if commented %}
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting approval.
+                        </div>
+                        {% else %}
+                        {% if user.is_authenticated %}
+                        <h3 class="card-header">Leave a comment:</h3>
+                        <p>Posting as: {{ user.username }}</p>
+                        <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                        </form>
+                        {% else %}
+                        <p>Log in to leave a comment</p>
+                        {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
-                {% else %}
-                {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% else %}
-                <p>Log in to leave a comment</p>
-                {% endif %}
-                {% endif %}
             </div>
         </div>
     </div>
 </div>
-
-
-  {% endblock content %}
+{% endblock content %}

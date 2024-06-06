@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="front-img">
-    <div class="card text-bg-dark">
-        <div class="card-img-overlay">
-            <h5 class="card-title">Välkommen till min sida!</h5>
-            <p class="card-text"></p>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active d-flex justify-content-center align-items-center">
+            <img src="../static/images/cupcakes.jpg" class="d-block img-fluid" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="welcome-title">Welcome to me recipe site !</h1>
+            </div>
         </div>
     </div>
 </div>
-
+</div>
 
 <div class="container-fluid">
     <div class="row">
@@ -18,7 +20,7 @@
                 {% for post in post_list %}
                 <div class="card" style="width: 18rem;">
                     <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                    <div class="card-body">
+                    <div class="card-body" id="recipe-card">
                         <a href="{% url 'recipe_detail' post.slug %}" class="post-link">
                             <h1> {{ post.title }} </h1>
                             <p class="card-text"> {{ post.excerpt }} </p>
