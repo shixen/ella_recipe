@@ -1,26 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-<section class="py-3 py-md-5">
-    <div class="container">
-        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-            <div class="col-12 col-lg-6 col-xl-5">
-                <img class="img-fluid rounded" loading="lazy" src="{% static 'images/selfie.jpeg' %}" alt="About 1">
-            </div>
-            <div class="col-12 col-lg-6 col-xl-7">
-                <div class="row justify-content-xl-center">
-                    <div class="col-12 col-xl-11">
-                        <h2 class="mb-3">About me</h2>
-                        <p class="lead fs-4 text-secondary mb-3"> info about me </p>
-                        <p class="mb-5"> something else
-                        </p>
-                        <div class="row gy-4 gy-md-0 gx-xxl-5X">
-                            <div class="col-12 col-md-6">
-                                <div class="d-flex">
-                                    <div class="me-4 text-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                            fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                        </svg>
+<div class="main-content">
+    <!-- main content -->
+    <section class="py-3 py-md-5">
+        <div class="container">
+            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <img class="img-fluid rounded card-img" loading="lazy" src="{% static 'images/selfie.jpeg' %}"
+                        alt="About 1">
+                </div>
+                <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="row justify-content-xl-center">
+                        <div class="col-12 col-xl-11">
+                            <h2 class="mb-3">Om mig</h2>
+                            <p class="lead fs-4 text-secondary mb-3">Hej mitt namn är Ella och jag är 23 år gammal.
+                                Jag har alltid haft familj som gillar att stå i köket och under senare tid har jag även
+                                jag hittat mitt ämne, bakning!🤩🧁
+                                Jag började med att trixa på och prova nya saker, vissa blev bra andra sämre som jag tog
+                                lärdom av. Därför är det alltid lika kul att lära mig något nytt.</p>
+                            <div class="row gy-4 gy-md-0 gx-xxl-5X">
+                                <div class="col-12 col-md-6">
+                                    <div class="d-flex">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -29,5 +36,7 @@
                 </div>
             </div>
         </div>
-</section>
+    </section>
+</div>
+</body>
 {% endblock %}
