@@ -40,6 +40,7 @@ ALLOWED_HOSTS = ['8000-shixen-ellarecipe-6tzd5m7oeks.ws-eu114.gitpod.io','.herok
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'contact',
+    'about',
 ]
 
 SITE_ID = 1
