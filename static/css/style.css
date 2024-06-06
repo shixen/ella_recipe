@@ -1,15 +1,16 @@
+/*------------------------------- body and main styles ----- */
+
 body {
     background-color: pink;
     display: flex;
     flex-direction: column;
 }
 
-/* Main content area */
 .main-content {
     flex: 1; /* Tar upp allt tillgängligt utrymme */
 }
 
-/* Footer styling */
+/*------------------------------- footer  ----- */
 footer {
     background-color: #fff;
     text-align: center;
@@ -19,7 +20,7 @@ footer {
     justify-content: center;
 }
 
-/* styles for image */
+/*------------------------------- images ----- */
 .card-img, .card-img-top {
     max-height: 400px;
     width: 100%;
@@ -27,7 +28,7 @@ footer {
     object-fit: cover;
 }
 
-/* center text in recipe cards */
+/*------------------------------- styles for bootstrap cards----- */
 .card-text, .card-title {
     text-align: center;
 }
@@ -46,10 +47,16 @@ footer {
     background-color: white;
 }
 
+/*------------------------------- paragraph ----- */
 p {
     text-align: center;
 }
 
+.welcome-title {
+    color: black;
+}
+
+/*------------------------------- carousel ----- */
 .carousel-caption {
     position: absolute;
     top: 50%;
@@ -58,18 +65,20 @@ p {
     color: white;
     text-align: center;
   }
-
-a {
-    text-decoration: none;
-}
-
+  
 .carousel-item img {
     max-width: 100%;
     height: auto;
     max-height: 80vh;
 }
 
+/*------------------------------- navbar ----- */
 nav {
+    text-decoration: none;
+}
+
+/*------------------------------- links and anchors ----- */
+a {
     text-decoration: none;
 }
 
@@ -82,12 +91,8 @@ nav {
     color: pink;
 }
 
-.welcome-title {
-    color: black;
-}
-
+/*------------------------------- buttons ----- */
 .btn {
     background-color: rgb(232, 81, 227);
 }
 
-/* link styles */
