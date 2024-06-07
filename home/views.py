@@ -57,8 +57,7 @@ class RecipeDetails(View):
         )
 
 def CommentEdit(request, slug, comment_id):
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
+    post = get_object_or_404(Post, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if request.method == "POST":
@@ -66,15 +65,19 @@ def CommentEdit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.approved = False
+            comment.approved = False 
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment was updated!')
+            
+            if not comment.approved:
+                messages.add_message(request, messages.INFO, 'Your edit is awaiting approval.')
+            else:
+                messages.add_message(request, messages.SUCCESS, 'Comment was updated!')
+
             return redirect('recipe_detail', slug=post.slug)
         else:
             messages.add_message(request, messages.ERROR, 'Oops, something went wrong!')
     else:
         comment_form = CommentForm(instance=comment)
-
 
     return render(request, 'comment.edit.html', {
         'comment_form': comment_form,

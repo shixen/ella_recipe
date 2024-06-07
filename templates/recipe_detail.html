@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<!-- specific recipe  -->
+<!-- specific recipe -->
 <div class="card mb-3" id="post-card">
     <img src="{{ post.image.url }}" class="card-img-top" alt="..." width="100%">
     <div class="card-body">
@@ -12,7 +11,7 @@
 
     <div class="container">
         <div class="row">
-            <!-- comment list  -->
+            <!-- comment list -->
             <div class="col-md-8">
                 <div class="card mb-4 mt-3">
                     <h3 class="card-header">Comments:</h3>
@@ -26,12 +25,14 @@
                             <div id="comment{{ comment.id }}">
                                 {{ comment.body | linebreaks }}
                             </div>
-                            {% if not comment.approved and comment.author == user %}
-                            <p class="approval">This comment is awaiting approval</p>
+                            {% if not comment.approved %}
+                                {% if comment.author == user %}
+                                    <p class="approval">This comment is awaiting approval</p>
+                                {% endif %}
                             {% endif %}
                             {% if user.is_authenticated and comment.author == user %}
-                            <a href="{% url 'comment_edit' post.slug comment.id %}" class="btn btn-edit">Edit</a>
-                            <a href="{% url 'comment_delete' post.slug comment.id %}" class="btn btn-delete">Delete</a>
+                                <a href="{% url 'comment_edit' post.slug comment.id %}" class="btn btn-edit">Edit</a>
+                                <a href="{% url 'comment_delete' post.slug comment.id %}" class="btn btn-delete">Delete</a>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -43,22 +44,30 @@
             <div class="col-md-4">
                 <div class="card mb-4 mt-3">
                     <div class="card-body">
-                        {% if commented %}
-                        <div class="alert alert-success" role="alert">
-                            Your comment is awaiting approval.
-                        </div>
-                        {% else %}
-                        {% if user.is_authenticated %}
-                        <h3 class="card-header">Leave a comment:</h3>
-                        <p>Posting as: {{ user.username }}</p>
-                        <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                            {% csrf_token %}
-                            {{ comment_form }}
-                            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                        </form>
-                        {% else %}
-                        <p>Log in to leave a comment</p>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-info" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
                         {% endif %}
+
+                        {% if commented %}
+                            <div class="alert alert-success" role="alert">
+                                Your comment is awaiting approval.
+                            </div>
+                        {% endif %}
+
+                        {% if user.is_authenticated %}
+                            <h3 class="card-header">Leave a comment:</h3>
+                            <p>Posting as: {{ user.username }}</p>
+                            <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                                {% csrf_token %}
+                                {{ comment_form }}
+                                <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                            </form>
+                        {% else %}
+                            <p>Log in to leave a comment</p>
                         {% endif %}
                     </div>
                 </div>
@@ -66,4 +75,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}
