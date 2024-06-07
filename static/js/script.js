@@ -1,4 +1,3 @@
-
 // shows popup message when click submit on form
 
 document.addEventListener("DOMContentLoaded", function() {
