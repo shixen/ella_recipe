@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active d-flex justify-content-center align-items-center">
-            <img src="/static/images/cupcakes.jpg" class="d-block img-fluid" alt="image of cupcakes">
+            <img src="{% static 'images/cupcakes.jpg' %}" class="d-block img-fluid" alt="image of cupcakes">
         </div>
     </div>
 </div>
