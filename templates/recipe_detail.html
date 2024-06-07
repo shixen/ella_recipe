@@ -18,8 +18,7 @@
                     <h3 class="card-header">Comments:</h3>
                     <div class="card-body">
                         {% for comment in comments %}
-                        <div
-                            class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
+                        <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
                             <p class="font-weight-bold">
                                 {{ comment.author }}
                                 <span class="font-weight-normal">{{ comment.created_on }}</span> wrote:
@@ -40,7 +39,7 @@
                 </div>
             </div>
 
-            <!-- commentform -->
+            <!-- comment form -->
             <div class="col-md-4">
                 <div class="card mb-4 mt-3">
                     <div class="card-body">
@@ -53,8 +52,8 @@
                         <h3 class="card-header">Leave a comment:</h3>
                         <p>Posting as: {{ user.username }}</p>
                         <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
                             {% csrf_token %}
+                            {{ comment_form | crispy }}
                             <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                         </form>
                         {% else %}
