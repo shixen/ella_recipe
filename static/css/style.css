@@ -47,13 +47,17 @@ footer {
     background-color: white;
 }
 
-/*------------------------------- paragraph ----- */
+/*------------------------------- paragraphs and headings  ----- */
 p {
     text-align: center;
 }
 
 .welcome-title {
     color: black;
+}
+
+.welcome h1{
+    text-align: center;
 }
 
 /*------------------------------- carousel ----- */
