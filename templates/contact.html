@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--  contact form for oreding or contacting -->
+<!--  contact form for ordering or contacting -->
 <form class="col-lg-6 offset-lg-3" id="contactform" method="POST" action="{% url 'contact' %}">
     {% csrf_token %}
 
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
     </div>
 
     <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
 
@@ -23,11 +23,13 @@
 
     <div class="form-group">
         <label for="message">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="3"
-            placeholder="what can i help you with ?"></textarea>
+        <textarea class="form-control" id="message" name="message" rows="3" placeholder="What can I help you with?"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" onclick="showAlert()">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<div id="successAlert" class="alert alert-success" style="display: none;">
+    Thanks for contacting !
+</div>
 
 {% endblock %}
