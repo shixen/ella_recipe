@@ -11,13 +11,30 @@ body {
 }
 
 /*------------------------------- footer  ----- */
+
 footer {
-    background-color: #fff;
     text-align: center;
     height: 50px; 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.footer-custom {
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.instagram-btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-text {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: middle; 
 }
 
 /*------------------------------- images ----- */
