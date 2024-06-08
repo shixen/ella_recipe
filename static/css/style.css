@@ -9,7 +9,9 @@ body {
 .main-content {
     flex: 1; /* Tar upp allt tillgängligt utrymme */
 }
-
+main{ 
+    min-height: 100vh;
+}
 /*------------------------------- footer  ----- */
 
 footer {
