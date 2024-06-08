@@ -1,4 +1,9 @@
 # Recipe
+
+This is a recipe website i built for my partner who loves to bake pastery and cook food.
+its a simple and clean site to brows for recipes to try out , read information about "Ella" herself or 
+to mabye place and order of some pastery.
+
 ![Skärmbild 2024-06-08 114109](https://github.com/shixen/ella_recipe/assets/150827343/9a2a5a4a-63a3-4bae-8ed9-181367b6a6d0)
 [link to live page](https://ella-recipe-cb81f80dd053.herokuapp.com/)
 
@@ -62,6 +67,10 @@ language of the page is supposed to be in swedish but keeping it in english for 
 * Contact page to contact site owner for questions or ordering
 
 ![Skärmbild 2024-06-08 120040](https://github.com/shixen/ella_recipe/assets/150827343/8c419485-21e9-46a4-a6bc-ddd7b9101e77)
+
+# Future features
+
+* search bar to search for categories on recipes
 
 # Technologies used 
 
