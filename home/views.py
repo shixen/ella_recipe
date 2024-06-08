@@ -5,10 +5,12 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .forms import CommentForm
 
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1)
     template_name = 'index.html'
+
 
 class RecipeDetails(View):
 
@@ -38,7 +40,7 @@ class RecipeDetails(View):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post 
+            comment.post = post
             comment.author = request.user
             comment.save()
             commented = True
@@ -56,6 +58,7 @@ class RecipeDetails(View):
             }
         )
 
+
 def CommentEdit(request, slug, comment_id):
     post = get_object_or_404(Post, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -65,17 +68,21 @@ def CommentEdit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.approved = False 
+            comment.approved = False
             comment.save()
-            
+
             if not comment.approved:
-                messages.add_message(request, messages.INFO, 'Your edit is awaiting approval.')
+                messages.add_message(
+                    request, messages.INFO, 'Your edit is awaiting approval.')
             else:
-                messages.add_message(request, messages.SUCCESS, 'Comment was updated!')
+                messages.add_message(
+                   request, messages.SUCCESS, 'Comment was updated!')
 
             return redirect('recipe_detail', slug=post.slug)
+
         else:
-            messages.add_message(request, messages.ERROR, 'Oops, something went wrong!')
+            messages.add_message(
+                request, messages.ERROR, 'Oops, something went wrong!')
     else:
         comment_form = CommentForm(instance=comment)
 
@@ -85,6 +92,7 @@ def CommentEdit(request, slug, comment_id):
         'post': post,
     })
 
+
 def CommentDelete(request, slug, comment_id):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -92,8 +100,11 @@ def CommentDelete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment was successfully deleted!')
+        messages.add_message
+        (request, messages.SUCCESS, 'Comment was successfully deleted!')
+
     else:
-        messages.add_message(request, messages.ERROR, 'You can\'t delete others\' comments!')
+        messages.add_message
+        (request, messages.ERROR, 'You can\'t delete others\' comments!')
 
     return redirect('recipe_detail', slug=post.slug)

@@ -1,4 +1,4 @@
-# imports 
+# imports
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -21,15 +21,14 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-  # presents the recipes in order from latest to last
+# presents the recipes in order from latest to last
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
         return self.title
 
-        
-        
+
 # models for creating a comment
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -41,7 +40,7 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-   # presents comments last comment first
+# presents comments last comment first
     class Meta:
         ordering = ["created_on"]
 
