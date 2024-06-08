@@ -76,6 +76,8 @@ Gitpod used to code the site
 
 Heroku used to host the page
 
+Cloudinary to store images 
+
 # Deployment
 
 This site was deployed using heroku
@@ -99,9 +101,24 @@ To deploy on heroku.
 
 # Testing 
 
+[CSS validator](https://validator.w3.org/)
+
+[Python validation](https://pep8ci.herokuapp.com/#)
+
+[JavaScript validator](https://www.site24x7.com/sv/tools/javascript-validator.html)
+
 * Lighthouse google devtools
 
 ![Skärmbild 2024-06-08 142117](https://github.com/shixen/ella_recipe/assets/150827343/6b55b9d7-d836-445a-9b62-e097bf312333)
+
+* Link to manual tesing [TESTING.md](https://github.com/shixen/ella_recipe/blob/main/TESTING.md)
+
+
+# Credits and Acknowledgements
+
+[Stackoverflow](https://stackoverflow.co/teams/features/?upgrade=true&utm_source=adwords&utm_medium=ppc&utm_campaign=kb_teams_search_nb_dsa_targeted_audiences_emea-dach&_bt=646019453180&_bk=&_bm=&_bn=g&gad_source=1&gclid=CjwKCAjwgpCzBhBhEiwAOSQWQS-IB-nTczz7ooMoToXuLeYv6wqeenTgHnfqwc_EDTWMPtOE92VPcRoCrXsQAvD_BwE)
+
+[Google](https://www.google.com/)
 
 
 
