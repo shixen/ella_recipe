@@ -31,6 +31,8 @@ I went with a simple brighter and a smooth color scheme to keep it clean and sim
 
 ![Skärmbild 2024-06-08 115516](https://github.com/shixen/ella_recipe/assets/150827343/b110d6ef-fa51-4366-8342-4c5e2157e2d7)
 
+language of the page is supposed to be in swedish but keeping it in english for now but will change later.
+
 
 ## Features
 * List of displayed recipes
@@ -111,7 +113,22 @@ To deploy on heroku.
 
 ![Skärmbild 2024-06-08 142117](https://github.com/shixen/ella_recipe/assets/150827343/6b55b9d7-d836-445a-9b62-e097bf312333)
 
+Manual testing is done by the people themself that actually build the project that needs testing and people are more adaptable to changes that may come during testing.
+And manual testing does not require any specific programs or tools to execute , i just requiers the page or program that needs to be tested.
+
+Automated testing is done by testscripts or testframeworks such as Jest or pytest and gets done automaticly by the program itself.
+And automated testing is better for saving time , lesser risk for human errors. automated testing automates the process and makes it faster and more consistent
+
 * Link to manual tesing [TESTING.md](https://github.com/shixen/ella_recipe/blob/main/TESTING.md)
+
+# Security
+
+* keeping the website secure by changing the secret key from the initial commit and keeping everying in a file thats not getting commited to visable eyes
+
+* Django has built-in support for CSRF protection. This prevents attacks where an unauthorized user can send a request from another website to perform unwanted actions on a logged-in user's account.
+
+* Django protects the application against SQL Injection attacks by using parameterized queries and sanitizing user data used in SQL queries.
+
 
 
 # Credits and Acknowledgements
@@ -120,5 +137,8 @@ To deploy on heroku.
 
 [Google](https://www.google.com/)
 
+code institute for support and information [code institute](https://codeinstitute.net/se/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+SWE+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=14660337051&hsa_grp=134087657984&hsa_ad=635849372549&hsa_src=g&hsa_tgt=aud-594467886660:kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwgpCzBhBhEiwAOSQWQclKyriDZuUK3ZXMSusGgtQ4284TD7Hno9jb8x9WrQxwZREj9xUpURoCk5wQAvD_BwE)
+
+my code institute menter Rory Patrick Sheridan for great mentoring and support during the build of this project
 
 
