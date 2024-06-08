@@ -38,6 +38,29 @@ I went with a simple brighter and a smooth color scheme to keep it clean and sim
 
 language of the page is supposed to be in swedish but keeping it in english for now but will change later.
 
+## Wireframes
+
+* homepage 
+
+![Skärmbild 2024-06-08 180423](https://github.com/shixen/ella_recipe/assets/150827343/8677cc09-2438-4d51-97ad-c4ce8ca6fec8)
+
+* About page
+
+![Skärmbild 2024-06-08 180709](https://github.com/shixen/ella_recipe/assets/150827343/84d4e083-5d29-40a0-b540-fbca79e4f385)
+
+* Contact page
+
+![Skärmbild 2024-06-08 181207](https://github.com/shixen/ella_recipe/assets/150827343/af5e8891-b96b-4672-8bff-1f44b20810aa)
+
+* Register account page
+
+![Skärmbild 2024-06-08 182116](https://github.com/shixen/ella_recipe/assets/150827343/0d5261c1-11b2-472d-947a-8731b16f797d)
+
+* Login page
+
+![Skärmbild 2024-06-08 182413](https://github.com/shixen/ella_recipe/assets/150827343/1b56d1a8-8013-48fa-9c12-c491f113bd38)
+
+
 
 ## Features
 * List of displayed recipes
@@ -107,8 +130,9 @@ To deploy on heroku.
 
 # Database design
 
+![Skärmbild 2024-06-08 191433](https://github.com/shixen/ella_recipe/assets/150827343/fd659645-fd4b-4fd3-87b8-18829b73d038)
 
-![Skärmbild 2024-06-08 133846](https://github.com/shixen/ella_recipe/assets/150827343/bb938bc7-bd3a-4416-b69e-ab63693c2736)
+
 
 # Testing 
 
